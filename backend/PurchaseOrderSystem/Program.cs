@@ -20,7 +20,9 @@ namespace PurchaseOrderSystem
 			Host.CreateDefaultBuilder(args)
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
-					webBuilder.UseStartup<Startup>();
+					webBuilder
+                        .UseUrls("http://*:3002")
+						.UseStartup<Startup>();
 				});
 	}
 }

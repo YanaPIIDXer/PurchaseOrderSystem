@@ -1,5 +1,16 @@
 version: "3.0"
 services:
+    backend:
+        build: ./backend
+        environment:
+            IS_DEVELOP: "true"
+        ports:
+            - 3002:3002
+        volumes:
+            - ./backend/PurchaseOrderSystem:/app
+            - /app/bin
+            - /app/obj
+        
     db:
         image: mysql:5.7
         platform: linux/x86_64
