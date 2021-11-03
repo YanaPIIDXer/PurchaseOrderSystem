@@ -3,12 +3,12 @@ participant "管理者" as Admin
 participant "システム" as System
 participant "業者" as Trader
 
-Admin -> System: 業者情報入力
+Admin -> System: 業者情報・ID・パスワード入力
 activate System
 System -> System: 業者情報登録
-System -> Admin: IDとパスワード発行
+System -> Admin: 登録完了
 deactivate System
-Admin -> Trader: 発行されたIDとパスワード通知
+Admin -> Trader: 登録したIDとパスワードを通知
 
 Trader -> System: 通知されたIDとパスワードを使ってログイン
 activate System
