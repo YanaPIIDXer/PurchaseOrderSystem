@@ -1,0 +1,20 @@
+@startuml UseCases
+left to right direction
+
+actor 管理者 as Admin
+actor 業者 as Trader
+rectangle {
+    usecase 業者の管理
+    usecase 発注書の作成
+    usecase 印刷用の発注書ダウンロード
+
+    usecase 商品の管理
+}
+
+Admin --> 業者の管理
+Admin --> 発注書の作成
+Admin --> 印刷用の発注書ダウンロード
+
+Trader --> 商品の管理
+
+@end
