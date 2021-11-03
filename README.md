@@ -1,6 +1,13 @@
 # PurchaseOrderSystem
 商品発注書作成システム。React + ASP.NETのポートフォリオ。
 
+## 使用技術
+
+|Key|Value|Source|
+|---|---|---|
+|フロントエンド|React|[frontend/以下](https://github.com/YanaPIIDXer/PurchaseOrderSystem/tree/develop/frontend)|
+|バックエンド|C# + ASP.NET Core|[backend/PurchaseOrderSystem/以下](https://github.com/YanaPIIDXer/PurchaseOrderSystem/tree/develop/backend/PurchaseOrderSystem)|
+
 ## このシステムで実現する事
 
 - 管理者
