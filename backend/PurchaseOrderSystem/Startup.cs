@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PurchaseOrderSystem.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,13 @@ namespace PurchaseOrderSystem
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+
+			var password = "development";		// TODO:ä¬ã´ïœêîÇ…ìÀÇ¡çûÇﬁ
+			var connString = string.Format("server={0};user={1};password={2};database=purchase_order_system", "db", "development", password);
+			services.AddDbContext<DatabaseContext>(options =>
+			{
+				options.UseMySql(connString, ServerVersion.AutoDetect(connString));
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
